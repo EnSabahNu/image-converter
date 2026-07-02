@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conversor de Imagens</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="workspace" aria-label="Conversor de imagens">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Ferramenta local</p>
+            <h1>Conversor de Imagens</h1>
+          </div>
+          <span class="status" id="statusText">Pronto</span>
+        </header>
+        <div class="converter">
+          <section class="dropzone" id="dropzone">
+            <input id="fileInput" type="file" accept="image/*" hidden>
+            <button class="uploadButton" id="uploadButton" type="button"><span class="uploadIcon" aria-hidden="true">+</span>Escolher imagem</button>
+            <p>ou arraste uma imagem para ca</p>
+            <small>PNG, JPG, WEBP, GIF, BMP e outros formatos aceitos pelo navegador.</small>
+          </section>
+          <aside class="panel" aria-label="Opcoes de conversao">
+            <label for="formatSelect">Converter para</label>
+            <select id="formatSelect">
+              <option value="image/png">PNG</option>
+              <option value="image/jpeg">JPG</option>
+              <option value="image/webp">WEBP</option>
+              <option value="image/svg+xml">SVG</option>
+              <option value="application/pdf">PDF</option>
+            </select>
+            <label for="qualityRange">Qualidade</label>
+            <div class="qualityRow"><input id="qualityRange" type="range" min="10" max="100" value="92"><output id="qualityValue" for="qualityRange">92%</output></div>
+            <button class="primaryButton" id="convertButton" type="button" disabled>Converter e baixar</button>
+          </aside>
+        </div>
+        <section class="previewArea" aria-label="Previa da imagem">
+          <div class="previewBox">
+            <img id="previewImage" alt="">
+            <div class="emptyState" id="emptyState"><strong>Nenhuma imagem selecionada</strong><span>A previa aparece aqui antes do download.</span></div>
+          </div>
+          <dl class="fileInfo" id="fileInfo" aria-label="Informacoes do arquivo">
+            <div><dt>Arquivo</dt><dd id="fileName">-</dd></div>
+            <div><dt>Tamanho</dt><dd id="fileSize">-</dd></div>
+            <div><dt>Dimensoes</dt><dd id="imageDimensions">-</dd></div>
+          </dl>
+        </section>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
